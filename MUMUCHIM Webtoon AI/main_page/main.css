@@ -1,0 +1,138 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: black;
+  color: white;
+  height: 100vh;
+  display: flex;
+  padding-top: 100px;
+}
+
+.left-side {
+  width: 50%;
+  display: flex;
+  align-items: center;        /* Vertical center */
+  justify-content: center;    /* Horizontal center */
+  background-color: black;
+  position: relative;         /* Needed for absolute positioning of child */
+}
+
+.left-side video {
+  width: 90%;
+  border-radius: 1rem;
+  position: relative;
+  top: -10px;     /* Adjust vertical position (negative moves it up) */
+  left: 10px;     /* Adjust horizontal position (positive moves it right) */
+}
+
+
+
+.video-placeholder {
+  width: 90%;
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px dashed #d5b445;
+  border-radius: 1rem;
+  font-size: 2rem;
+  color: #d5b445;
+}
+
+.right-side {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+h1 {
+  font-size: 5rem;
+  color: #d5b445;
+  margin-bottom: 3rem;
+}
+
+.menu-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+  width: 100%;
+}
+
+.menu-buttons button {
+  padding: 1.5rem;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #d5b445;
+  background-color: transparent;
+  border: 2px solid #d5b445;
+  border-radius: 2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 80%;
+  max-width: 400px;
+}
+
+.menu-buttons button:hover {
+  background-color: #d5b445;
+  color: black;
+  transform: scale(1.1);
+  box-shadow: 0 0 20px #d5b445;
+}
+
+.back-button {
+  margin-top: 4rem;
+  padding: 1rem 3rem;
+  font-size: 1.6rem;
+  color: #d5b445;
+  border: 2px solid #d5b445;
+  background-color: transparent;
+  border-radius: 2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: #d5b445;
+  color: black;
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #d5b445;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: black;
+  padding: 1rem 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #d5b445;
+}
+
+nav a {
+  font-size: 1.6rem;
+  color: white;
+  margin-left: 2rem;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: #d5b445;
+}

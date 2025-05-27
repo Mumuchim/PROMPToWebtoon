@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Main Menu - PromptToWebtoon</title>
+  <link rel="stylesheet" href="../start_page/style.css">
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+  <header>
+    <div class="logo">PROMPToWEBTOON</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="#about">About</a>
+    </nav>
+  </header>
+
+  <div class="left-side">
+    <video id="demoVideo" src="/assets/demo_vid.mp4" autoplay loop muted style="display: none;"></video>
+    <div id="videoPlaceholder" class="video-placeholder">960 x 540 - demo video preview</div>
+  </div>
+
+  <div class="right-side">
+    <h1>Main Menu</h1>
+    <div class="menu-buttons">
+      <button onclick="location.href='prompt.html'">Prompt a Story</button>
+      <button onclick="location.href='characters.html'">Create Characters</button>
+      <button onclick="location.href='background.html'">Create Background</button>
+      <button onclick="location.href='gallery.html'">Gallery</button>
+    </div>
+    <button class="back-button" onclick="location.href='index.html'">Back</button>
+  </div>
+
+  <script>
+    const video = document.getElementById("demoVideo");
+    const placeholder = document.getElementById("videoPlaceholder");
+    video.addEventListener("loadeddata", () => {
+      if (video.readyState >= 2) {
+        placeholder.style.display = "none";
+        video.style.display = "block";
+      }
+    });
+  </script>
+</body>
+</html>

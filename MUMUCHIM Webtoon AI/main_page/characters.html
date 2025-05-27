@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Create Character</title>
+  <link rel="stylesheet" href="../start_page/style.css">
+  <link rel="stylesheet" href="/semi.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">PROMPToWEBTOON</div>
+    <nav>
+      <a href="../main_page/main.html">Home</a>
+        <a href="../main_page/main.html">About</a>
+          <a href="../main_page/main.html">Guide</a>
+            <a href="../main_page/main.html">Discord</a>
+    </nav>
+  </header>
+
+  <div class="left-side">
+  <div class="image-container">
+    <img id="characterImage" src="/assets/demo_character.jpg" alt="Character Preview" class="character-image">
+  </div>
+  <button id="saveButton" class="save-button hidden">Save Character</button>
+</div>
+
+
+<br>
+
+  <div class="right-side">
+    <h1>Create Character</h1>
+    <div class="menu-buttons">
+      <div class="form-group">
+        <label for="charPrompt">Character Prompt (e.g. blond, asian, animal, human)</label>
+        <input type="text" id="charPrompt" placeholder="Enter character traits">
+      </div>
+      <div class="form-group">
+        <label for="clothingPrompt">Clothing Prompt (e.g. jeans, t-shirt)</label>
+        <input type="text" id="clothingPrompt" placeholder="Enter clothing style">
+      </div>
+      <div class="form-group">
+        <label for="negPrompt">Negative Prompt (things to exclude)</label>
+        <input type="text" id="negPrompt" placeholder="Enter what to exclude">
+      </div>
+      <div class="form-group">
+        <label for="styleSelect">Style</label>
+        <select id="styleSelect">
+          <option value="anime">Anime</option>
+          <option value="webtoon">Webtoon</option>
+          <option value="cartoon">Cartoon</option>
+          <option value="ghibli">Ghibli</option>
+        </select>
+      </div>
+      <button class="create-button" onclick="createCharacter()">Create</button>
+      <button id="viewCharactersBtn" class="view-characters-button hidden" onclick="location.href='gallery.html'">View Created Characters</button>
+    </div>
+    <button class="back-button" onclick="location.href='../main_page/main.html'">Back</button>
+  </div>
+
+  <script>
+    function createCharacter() {
+  const charPrompt = document.getElementById("charPrompt").value.trim();
+  if (charPrompt === "") {
+    alert("Please enter a character prompt to load an image.");
+    return;
+  }
+
+  // Build the image path from the prompt
+  const imagePath = `/assets/${charPrompt}.jpg`;
+
+  // Set the image src and show the image
+  const characterImage = document.getElementById("characterImage");
+  characterImage.src = imagePath;
+  characterImage.style.display = "block";
+
+  // Show the Save button
+  document.getElementById("saveButton").classList.remove("hidden");
+}
+
+    document.getElementById("saveButton").addEventListener("click", () => {
+      const name = prompt("Enter a name for this character:");
+      if (name) {
+        alert(`Character "${name}" saved!`);
+        document.getElementById("viewCharactersBtn").classList.remove("hidden");
+        document.getElementById("saveButton").classList.add("hidden");
+      }
+    });
+  </script>
+</body>
+</html>
