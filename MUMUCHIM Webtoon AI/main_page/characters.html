@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Create Character</title>
   <link rel="stylesheet" href="../start_page/style.css">
-  <link rel="stylesheet" href="/semi.css" />
+  <link rel="stylesheet" href="../semi.css" />
 </head>
 <body>
   <header>
@@ -20,7 +20,7 @@
 
   <div class="left-side">
   <div class="image-container">
-    <img id="characterImage" src="/assets/demo_character.jpg" alt="Character Preview" class="character-image">
+    <img id="characterImage" src="../assets/demo.jpg" alt="Character Preview" class="character-image">
   </div>
   <button id="saveButton" class="save-button hidden">Save Character</button>
 </div>
@@ -67,7 +67,7 @@
   }
 
   // Build the image path from the prompt
-  const imagePath = `/assets/${charPrompt}.jpg`;
+  const imagePath = `../assets/${charPrompt}.jpg`;
 
   // Set the image src and show the image
   const characterImage = document.getElementById("characterImage");
